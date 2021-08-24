@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Chapter5</display-name>
+  
+  <servlet>
+  	<!-- web.xml내에서 다른 서블릿과 구분될 고유한 이름 지정 -->
+  	<servlet-name>configTest1</servlet-name>
+  	<jsp-file>/configTest/configTest1.jsp</jsp-file> <!-- jsp파일 경로 -->
+  	
+  	<!-- 해당 서블릿에서 공유될 초기화 파라미터의 이름과 값 설정 -->
+  	<init-param>
+  		<param-name>jdbcdriver</param-name> <!-- 초기 파라미터 이름 -->
+  		<param-value>oracle.jdbc.OracleDriver</param-value> <!-- 초기 파라미터 값 -->
+  	</init-param>
+  	
+  	<init-param>
+  		<param-name>fileDir</param-name>
+  		<param-value>C:\test</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<!-- 7과 29라인은 같은 의미로 반드시 이름이 일치해야함. -->
+  	<servlet-name>configTest1</servlet-name>
+  	<url-pattern>/cfTest1.jsp</url-pattern> <!-- 맵핑 이름 -->
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
